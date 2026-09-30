@@ -1,0 +1,124 @@
+=====================================================================
+CATATAN: LOCAL vs HOSTING - PROYEK KURSUSKU
+=====================================================================
+Proyek  : kursusku-prototype (week-05)
+Nama    : ______________________
+Tanggal : ______________________
+
+
+---------------------------------------------------------------------
+1. LINGKUNGAN YANG DIPAKAI
+---------------------------------------------------------------------
+
+Lokal (komputer sendiri)
+- Alamat 1 : http://localhost/kursusku-prototype/
+  (subfolder di htdocs, misalnya XAMPP)
+- Alamat 2 : http://kursusku-prototype.test/
+  (virtual host otomatis, misalnya Laragon)
+- Web server : Apache / Nginx bawaan XAMPP atau Laragon
+- PHP        : versi ___________ (cek dengan phpinfo() atau php -v)
+
+Hosting (server publik)
+- Alamat   : https://______________________ (isi jika sudah ada)
+- Web server : ______________ (umumnya Apache/LiteSpeed)
+- PHP        : versi ___________
+
+
+---------------------------------------------------------------------
+2. PERBEDAAN UMUM LOCAL DAN HOSTING
+---------------------------------------------------------------------
+
+Aspek              | Local                          | Hosting
+-------------------|--------------------------------|------------------------------
+Alamat akses       | localhost / .test              | Nama domain publik
+Siapa yang bisa    | Hanya komputer sendiri         | Siapa saja lewat internet
+mengakses          |                                |
+Folder proyek      | htdocs / www (dipilih sendiri) | public_html / htdocs (diatur
+                   |                                | penyedia)
+Root situs         | localhost = subfolder,         | Biasanya proyek langsung di
+                   | .test = root                   | root domain
+Protokol           | HTTP                           | HTTPS (SSL)
+Versi PHP          | Sesuai yang diinstal sendiri   | Sesuai pilihan/paket hosting
+Pesan error        | Sering ditampilkan lengkap     | Biasanya disembunyikan
+Huruf besar/kecil  | Windows tidak membedakan       | Server Linux MEMBEDAKAN
+pada nama file     | (Style.css = style.css)        | (Style.css != style.css)
+Kecepatan          | Sangat cepat (tanpa internet)  | Tergantung server & koneksi
+Font Google, CDN   | Butuh internet untuk dimuat    | Umumnya lancar
+Biaya              | Gratis                         | Bisa gratis/berbayar
+Cara upload        | Tidak perlu (langsung di folder)| FTP / File Manager / Git
+
+
+---------------------------------------------------------------------
+3. TEMUAN NYATA DI PROYEK INI
+---------------------------------------------------------------------
+
+Temuan 1: Dua salinan proyek dengan style.css berbeda
+- Alamat localhost/kursusku-prototype/ memakai style.css yang sudah
+  punya gaya untuk form dan halaman hasil (tema hijau-teal, font
+  Arial).
+- Alamat kursusku-prototype.test memakai style.css yang awalnya hanya
+  berisi gaya untuk index.php (tema ungu, font Poppins).
+- Akibatnya registration.php dan process-registration.php tampil
+  berbeda di dua alamat, padahal file PHP-nya sama.
+- Penyebab: proyek ada di dua folder terpisah (mis. htdocs dan www)
+  dan file CSS-nya tidak sama.
+- Solusi: pakai satu folder kerja saja, atau sinkronkan style.css.
+
+Temuan 2: Path file CSS
+- Path yang dipakai: href="assets/css/style.css" (relatif).
+- Path relatif aman di localhost (subfolder) maupun .test (root)
+  maupun hosting.
+- Path yang diawali "/" (mis. /assets/css/style.css) akan gagal di
+  localhost/kursusku-prototype/ karena "/" berarti root server,
+  bukan folder proyek.
+
+Temuan 3: Cache browser
+- Setelah style.css diubah, tampilan lama bisa masih muncul.
+- Solusi: hard refresh dengan Ctrl + F5.
+
+Temuan 4: Font Poppins
+- Dimuat lewat @import Google Fonts, jadi butuh internet.
+- Tanpa internet, font berganti ke sans-serif bawaan (mirip Arial).
+- @import harus berada di baris paling atas style.css.
+
+
+---------------------------------------------------------------------
+4. YANG PERLU DISIAPKAN SEBELUM UPLOAD KE HOSTING
+---------------------------------------------------------------------
+
+[ ] Pastikan versi PHP hosting mendukung kode yang dipakai
+    (operator ?? butuh PHP 7.0+, tipe kembalian :string butuh 7.0+)
+[ ] Cocokkan huruf besar/kecil semua nama file dan path
+    (server Linux membedakannya)
+[ ] Upload semua folder: assets/, file .php, dan file pendukung
+[ ] Letakkan di folder yang benar (mis. public_html)
+[ ] Cek semua link (index.php, registration.php, process-registration.php)
+[ ] Uji ulang form pendaftaran di alamat hosting
+[ ] Pastikan display_errors dimatikan di hosting untuk keamanan
+[ ] Gunakan HTTPS jika tersedia
+[ ] Jangan upload file catatan pribadi (mis. test-matrix.txt) ke
+    folder publik bila tidak perlu
+
+
+---------------------------------------------------------------------
+5. HASIL PERBANDINGAN (ISI SETELAH DICOBA)
+---------------------------------------------------------------------
+
+Item yang dibandingkan          | Local  | Hosting | Sama?
+--------------------------------|--------|---------|------
+Halaman index.php tampil        |        |         |
+Font Poppins termuat            |        |         |
+Form registration.php tampil    |        |         |
+Kirim form berhasil             |        |         |
+Halaman hasil tampil            |        |         |
+Tombol "Kembali ke Form" jalan  |        |         |
+Tampilan di HP                  |        |         |
+
+
+---------------------------------------------------------------------
+6. KESIMPULAN
+---------------------------------------------------------------------
+
+______________________________________________________________
+______________________________________________________________
+______________________________________________________________

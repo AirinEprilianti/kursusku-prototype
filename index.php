@@ -64,17 +64,22 @@ $courses = [
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?= htmlspecialchars($siteName) ?></title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body> 
   <header>
-    <nav aria-label="Navigasi utama"> <a href="index.php"> <strong><?= htmlspecialchars($siteName) ?></strong> </a> <a href="#keunggulan">Keunggulan</a> <a href="#katalog">Katalog</a> <a href="#alur">Cara Daftar</a> <a href="#kontak">Kontak</a> </nav>
+    <nav aria-label="Navigasi utama"> 
+      <a href="index.php"> <strong><?= htmlspecialchars($siteName) ?></strong> </a> 
+      <a href="#keunggulan">Keunggulan</a> <a href="#katalog">Katalog</a> 
+      <a href="#alur">Cara Daftar</a> <a href="#kontak">Kontak</a> </nav>
   </header>
   <main>
     <section id="hero">
       <h1><?= htmlspecialchars($tagline) ?></h1>
       <p> Temukan kursus teknologi yang relevan untuk meningkatkan keterampilan Anda. </p> <a href="#katalog"> Lihat Katalog Kursus </a>
       <a href="fee-calculator.php">Lihat Estimasi Biaya</a>
+      <a href="registration.php">Daftar Sekarang</a>
     </section>
     <section id="keunggulan">
       <h2>Mengapa Memilih KursusKu?</h2>
@@ -92,7 +97,6 @@ $courses = [
       </article>
     </section> 
     <section id="katalog">
-      <section id="katalog">
 
     <h2>Katalog Kursus</h2>
 
@@ -144,6 +148,13 @@ $courses = [
                         <span class="<?= $statusClass ?>">
                             <?= $status ?>
                         </span>
+                      <td>
+  <?php if ($status !== 'Penuh'): ?>
+    <a href="registration.php">Daftar</a>
+  <?php else: ?>
+    -
+  <?php endif; ?>
+</td>  
                     </td>
                 </tr>
 

@@ -1,0 +1,221 @@
+=====================================================================
+TEST MATRIX - FORM PENDAFTARAN KURSUSKU
+=====================================================================
+Proyek   : kursusku-prototype (week-05)
+Halaman  : registration.php  ->  process-registration.php
+Metode   : POST
+Penguji  : ______________________
+Tanggal  : ______________________
+Browser  : ______________________
+
+Keterangan kolom:
+- No        : nomor skenario
+- Skenario  : apa yang diuji
+- Input     : data yang dimasukkan
+- Diharapkan: hasil yang seharusnya terjadi
+- Aktual    : hasil sebenarnya (ISI SAAT PENGUJIAN)
+- Status    : LULUS / GAGAL (ISI SAAT PENGUJIAN)
+
+
+---------------------------------------------------------------------
+A. PENGUJIAN ALUR NORMAL
+---------------------------------------------------------------------
+
+No  : A1
+Skenario   : Semua field diisi dengan benar
+Input      : Nama "Airin Eprilianti", email "menyau@gmail.com",
+             HP "0812345678", prodi "PTIK", kursus "Web Dasar",
+             jenis peserta "Mahasiswa", minat "Database",
+             catatan "belajar web"
+Diharapkan : Pindah ke process-registration.php, muncul judul
+             "Pendaftaran Diterima untuk Diproses" dan semua data
+             tampil sesuai input, sumber = "week-05".
+Aktual     : ______________________________________________
+Status     : ______
+
+No  : A2
+Skenario   : Hanya field wajib yang diisi (minat & catatan kosong)
+Input      : Nama, email, HP, prodi, kursus, jenis peserta
+Diharapkan : Form terkirim. Baris Minat dan Catatan tampil kosong.
+Aktual     : ______________________________________________
+Status     : ______
+
+No  : A3
+Skenario   : Memilih lebih dari satu minat tambahan
+Input      : Centang UI/UX, Database, dan Backend
+Diharapkan : Minat tampil sebagai "ui-ux, database, backend".
+Aktual     : ______________________________________________
+Status     : ______
+
+No  : A4
+Skenario   : Tombol "Kembali ke Form" di halaman hasil
+Input      : Klik tombol
+Diharapkan : Kembali ke registration.php dengan form kosong.
+Aktual     : ______________________________________________
+Status     : ______
+
+
+---------------------------------------------------------------------
+B. PENGUJIAN VALIDASI FIELD WAJIB (validasi browser)
+---------------------------------------------------------------------
+
+No  : B1
+Skenario   : Nama Lengkap dikosongkan
+Diharapkan : Browser menolak, muncul pesan "Isi bidang ini".
+Aktual     : ______________________________________________
+Status     : ______
+
+No  : B2
+Skenario   : Email dikosongkan
+Diharapkan : Browser menolak, muncul pesan "Isi bidang ini".
+Aktual     : ______________________________________________
+Status     : ______
+
+No  : B3
+Skenario   : Nomor HP dikosongkan
+Diharapkan : Browser menolak, muncul pesan "Isi bidang ini".
+Aktual     : ______________________________________________
+Status     : ______
+
+No  : B4
+Skenario   : Program Studi dikosongkan
+Diharapkan : Browser menolak, muncul pesan "Isi bidang ini".
+Aktual     : ______________________________________________
+Status     : ______
+
+No  : B5
+Skenario   : Kursus tidak dipilih ("-- Pilih kursus --")
+Diharapkan : Browser menolak, muncul pesan "Pilih item dalam daftar".
+Aktual     : ______________________________________________
+Status     : ______
+
+No  : B6
+Skenario   : Jenis Peserta tidak dipilih
+Diharapkan : Browser menolak, muncul pesan "Pilih salah satu opsi".
+Aktual     : ______________________________________________
+Status     : ______
+
+
+---------------------------------------------------------------------
+C. PENGUJIAN BATAS DAN FORMAT DATA
+---------------------------------------------------------------------
+
+No  : C1
+Skenario   : Nama kurang dari 3 karakter (minlength=3)
+Input      : "Ab"
+Diharapkan : Browser menolak dan meminta minimal 3 karakter.
+Aktual     : ______________________________________________
+Status     : ______
+
+No  : C2
+Skenario   : Format email salah
+Input      : "menyau" (tanpa @) atau "menyau@"
+Diharapkan : Browser menolak dengan pesan format email tidak valid.
+Aktual     : ______________________________________________
+Status     : ______
+
+No  : C3
+Skenario   : Nomor HP lebih dari 15 karakter (maxlength=15)
+Input      : Ketik 20 angka
+Diharapkan : Input berhenti di 15 karakter.
+Aktual     : ______________________________________________
+Status     : ______
+
+No  : C4
+Skenario   : Catatan lebih dari 300 karakter (maxlength=300)
+Input      : Tempel teks 400 karakter
+Diharapkan : Teks terpotong di 300 karakter.
+Aktual     : ______________________________________________
+Status     : ______
+
+No  : C5
+Skenario   : Nama hanya berisi spasi
+Input      : "     " (5 spasi)
+Diharapkan : Sebaiknya ditolak. Catatan: browser bisa saja
+             menerimanya karena panjang 5 karakter. Cek apakah
+             PHP (trim) menghasilkan nama kosong di halaman hasil.
+Aktual     : ______________________________________________
+Status     : ______
+
+
+---------------------------------------------------------------------
+D. PENGUJIAN KEAMANAN DASAR
+---------------------------------------------------------------------
+
+No  : D1
+Skenario   : Input berisi tag HTML/script (uji XSS)
+Input      : Catatan: <script>alert('x')</script>
+Diharapkan : Teks tampil apa adanya sebagai tulisan, TIDAK dijalankan
+             (fungsi e() memakai htmlspecialchars).
+Aktual     : ______________________________________________
+Status     : ______
+
+No  : D2
+Skenario   : Input berisi tanda kutip
+Input      : Nama: O'Brien "Test"
+Diharapkan : Tampil utuh tanpa merusak tampilan halaman.
+Aktual     : ______________________________________________
+Status     : ______
+
+No  : D3
+Skenario   : Membuka process-registration.php langsung lewat URL
+             (tanpa mengirim form / metode GET)
+Diharapkan : Idealnya diarahkan kembali ke form atau muncul pesan
+             error. Catatan: kode saat ini kemungkinan menampilkan
+             halaman hasil dengan data kosong.
+Aktual     : ______________________________________________
+Status     : ______
+
+No  : D4
+Skenario   : Melewati validasi browser (mis. hapus atribut "required"
+             lewat F12 lalu kirim form kosong)
+Diharapkan : Idealnya server menolak data kosong. Catatan: kode saat
+             ini belum punya validasi di sisi server, sehingga data
+             kosong kemungkinan tetap diterima. Catat sebagai temuan.
+Aktual     : ______________________________________________
+Status     : ______
+
+
+---------------------------------------------------------------------
+E. PENGUJIAN TAMPILAN
+---------------------------------------------------------------------
+
+No  : E1
+Skenario   : Tampilan registration.php di layar lebar (desktop)
+Diharapkan : Nav rapi, form dalam kartu putih, 2 kolom untuk
+             Nama/Email dan HP/Prodi.
+Aktual     : ______________________________________________
+Status     : ______
+
+No  : E2
+Skenario   : Tampilan registration.php di layar sempit (lebar < 768px)
+Diharapkan : Form menjadi 1 kolom.
+Aktual     : ______________________________________________
+Status     : ______
+
+No  : E3
+Skenario   : Tampilan process-registration.php
+Diharapkan : Kotak sukses, kartu data, dan tombol "Kembali ke Form"
+             bergaya sama dengan tema situs.
+Aktual     : ______________________________________________
+Status     : ______
+
+No  : E4
+Skenario   : Tampilan sama di localhost dan kursusku-prototype.test
+Diharapkan : Kedua alamat tampil identik (satu folder proyek,
+             satu versi style.css).
+Aktual     : ______________________________________________
+Status     : ______
+
+
+---------------------------------------------------------------------
+RINGKASAN
+---------------------------------------------------------------------
+Total skenario : 27
+Lulus          : ____
+Gagal          : ____
+
+Temuan / catatan tambahan:
+1. ____________________________________________________________
+2. ____________________________________________________________
+3. ____________________________________________________________
