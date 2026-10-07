@@ -282,15 +282,11 @@
         </a>
 
         <a href="register.php">
-            Daftar Kursus
+            Daftar P6
         </a>
 
         <a href="history.php">
             History
-        </a>
-
-        <a href="test-matrix.php">
-            Test Matrix
         </a>
 
     </div>

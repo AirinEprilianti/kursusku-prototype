@@ -74,11 +74,11 @@ $courses = [
       <a href="#keunggulan">Keunggulan</a> 
       <a href="#katalog">Katalog</a> 
       <a href="#alur">Cara Daftar</a> 
-      <a href="#kontak">Kontak</a> 
+      <a href="#kontak">Kontak</a>
+      <a href="#media">Media</a> 
       <a href="registration.php">Form P5</a>
       <a href="register.php">Daftar P6</a>
-        <a href="history.php">History Dummy</a>
-        <a href="test-matrix.php">Test Matrix</a>
+      <a href="history.php">History Dummy</a>
       </nav>
 
   </header>
