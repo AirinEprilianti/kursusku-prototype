@@ -1,0 +1,117 @@
+TEST MATRIX WAJIB
+KursusKu UIN - Pertemuan 6
+
+==================================================
+01. Mahasiswa, Web Dasar, 1 paket
+==================================================
+Input    : Mahasiswa, Web Dasar, 1 paket
+Expected : Total Rp240.000
+Actual   : Rp240.000
+Status   : PASS
+Fix      : -
+
+==================================================
+02. Guru, PHP Dasar, 1 paket
+==================================================
+Input    : Guru, PHP Dasar, 1 paket
+Expected : Total Rp340.000
+Actual   : Rp340.000
+Status   : PASS
+Fix      : -
+
+==================================================
+03. Umum, Laravel Dasar, 1 paket
+==================================================
+Input    : Umum, Laravel Dasar, 1 paket
+Expected : Total Rp500.000
+Actual   : Rp500.000
+Status   : PASS
+Fix      : -
+
+==================================================
+04. Mahasiswa, Web Dasar, 2 paket
+==================================================
+Input    : Mahasiswa, Web Dasar, 2 paket
+Expected : Total Rp480.000
+Actual   : Rp480.000
+Status   : PASS
+Fix      : -
+
+==================================================
+05. Nama kosong
+==================================================
+Input    : Nama dikosongkan
+Expected : Muncul pesan "Nama wajib diisi."
+Actual   : Nama wajib diisi.
+Status   : PASS
+Fix      : -
+
+==================================================
+06. Email bukan format email
+==================================================
+Input    : Email menggunakan format tidak valid
+Expected : Muncul pesan "Email tidak valid."
+Actual   : Email tidak valid.
+Status   : PASS
+Fix      : -
+
+==================================================
+07. Tidak memilih minat
+==================================================
+Input    : Tidak memilih minat
+Expected : Tidak ada warning; tampil "Belum memilih minat."
+Actual   : Belum memilih minat.
+Status   : PASS
+Fix      : -
+
+==================================================
+08. Pilih 3 minat
+==================================================
+Input    : Memilih 3 minat
+Expected : Ketiga pilihan tampil pada ringkasan
+Actual   : Frontend, Backend, Database
+Status   : PASS
+Fix      : -
+
+==================================================
+09. Metode offline
+==================================================
+Input    : Memilih metode offline
+Expected : Label "Tatap Muka"
+Actual   : Tatap Muka
+Status   : PASS
+Fix      : -
+
+==================================================
+10. Metode hybrid
+==================================================
+Input    : Memilih metode hybrid
+Expected : Label "Hybrid"
+Actual   : Hybrid
+Status   : PASS
+Fix      : -
+
+==================================================
+11. Buka process.php langsung dengan GET
+==================================================
+Input    : Membuka process.php langsung melalui GET
+Expected : Kembali / redirect ke register.php
+Actual   : Redirect ke register.php
+Status   : PASS
+Fix      : -
+
+==================================================
+12. Tambah satu fasilitas di array
+==================================================
+Input    : Menambah satu fasilitas pada array
+Expected : Item baru tampil otomatis melalui loop
+Actual   : Dirender otomatis dengan foreach
+Status   : PASS
+Fix      : -
+
+==================================================
+CATATAN
+==================================================
+Test matrix di atas digunakan untuk mencatat hasil pengujian
+fitur pendaftaran KursusKu UIN. Nilai Actual dan Status PASS
+harus disesuaikan lagi dengan hasil pengujian nyata di browser.

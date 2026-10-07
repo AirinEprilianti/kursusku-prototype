@@ -71,10 +71,19 @@ $courses = [
   <header>
     <nav aria-label="Navigasi utama"> 
       <a href="index.php"> <strong><?= htmlspecialchars($siteName) ?></strong> </a> 
-      <a href="#keunggulan">Keunggulan</a> <a href="#katalog">Katalog</a> 
-      <a href="#alur">Cara Daftar</a> <a href="#kontak">Kontak</a> </nav>
+      <a href="#keunggulan">Keunggulan</a> 
+      <a href="#katalog">Katalog</a> 
+      <a href="#alur">Cara Daftar</a> 
+      <a href="#kontak">Kontak</a> 
+      <a href="registration.php">Form P5</a>
+      <a href="register.php">Daftar P6</a>
+        <a href="history.php">History Dummy</a>
+        <a href="test-matrix.php">Test Matrix</a>
+      </nav>
+
   </header>
   <main>
+
     <section id="hero">
       <h1><?= htmlspecialchars($tagline) ?></h1>
       <p> Temukan kursus teknologi yang relevan untuk meningkatkan keterampilan Anda. </p> <a href="#katalog"> Lihat Katalog Kursus </a>
@@ -143,21 +152,12 @@ $courses = [
                             $course['registered']
                         ) ?>
                     </td>
-
                     <td>
                         <span class="<?= $statusClass ?>">
                             <?= $status ?>
                         </span>
-                      <td>
-  <?php if ($status !== 'Penuh'): ?>
-    <a href="registration.php">Daftar</a>
-  <?php else: ?>
-    -
-  <?php endif; ?>
-</td>  
                     </td>
                 </tr>
-
             <?php endforeach; ?>
 
         </tbody>
