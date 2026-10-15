@@ -463,3 +463,144 @@ fieldset legend {
         margin-bottom: 12px;
     }
 }
+
+/* ===== HALAMAN WAKTU SERVER - TEMA UNGU ===== */
+
+body.utility-page {
+    margin: 0;
+    min-height: 100vh;
+    padding: 70px 24px;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    font-family: Arial, Helvetica, sans-serif;
+    color: #27213b;
+
+    background: linear-gradient(
+        135deg,
+        #f5f0ff 0%,
+        #eee7ff 100%
+    );
+}
+
+.utility-page .utility-card {
+    width: 100%;
+    max-width: 900px;
+    box-sizing: border-box;
+
+    padding: 44px 40px;
+    background: #ffffff;
+    border-radius: 24px;
+
+    box-shadow: 0 12px 35px rgba(91, 33, 182, 0.10);
+}
+
+.utility-page .eyebrow {
+    display: inline-block;
+    margin-bottom: 38px;
+
+    color: #7c3aed;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.utility-page h1 {
+    margin: 0 0 28px;
+    color: #27213b;
+    font-size: 40px;
+    line-height: 1.3;
+}
+
+.utility-page .server-time {
+    margin: 0 0 24px;
+    padding: 22px;
+
+    background: #f5f0ff;
+    border-radius: 14px;
+
+    color: #4c1d95;
+    font-size: 22px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.utility-page .server-time strong {
+    color: #5b21b6;
+}
+
+.utility-page .description {
+    margin: 0 0 32px;
+    color: #625b71;
+
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.utility-page code {
+    padding: 3px 7px;
+    border-radius: 5px;
+
+    background: #f1eaff;
+    color: #6d28d9;
+
+    font-family: Consolas, monospace;
+}
+
+.utility-page .button {
+    display: inline-block;
+    padding: 17px 26px;
+
+    border-radius: 12px;
+    background: #7c3aed;
+    color: #ffffff;
+
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+
+    transition: background 0.25s ease,
+                transform 0.25s ease;
+}
+
+.utility-page .button:hover {
+    background: #5b21b6;
+    transform: translateY(-2px);
+}
+
+/* Tampilan HP */
+@media (max-width: 600px) {
+    body.utility-page {
+        padding: 32px 16px;
+    }
+
+    .utility-page .utility-card {
+        padding: 30px 22px;
+        border-radius: 20px;
+    }
+
+    .utility-page .eyebrow {
+        margin-bottom: 28px;
+    }
+
+    .utility-page h1 {
+        font-size: 30px;
+    }
+
+    .utility-page .server-time {
+        padding: 16px;
+        font-size: 18px;
+    }
+
+    .utility-page .description {
+        font-size: 15px;
+    }
+
+    .utility-page .button {
+        padding: 15px 20px;
+        font-size: 15px;
+    }
+}
