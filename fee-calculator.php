@@ -17,7 +17,7 @@ $total = $subtotal - $discount + $adminFee;
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kalkulator Biaya KursusKu</title>
     <style>
-        body {
+          body {
         font-family: Arial, sans-serif;
         background: #f3e8ff;
         margin: 0;
