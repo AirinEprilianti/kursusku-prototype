@@ -4,19 +4,20 @@ session_start();
 
 require __DIR__ . '/helpers.php';
 
-$history = [
-    ['name' => 'Alya',  'course' => 'Web Dasar',      'total' => 240000],
-    ['name' => 'Bima',  'course' => 'PHP Dasar',      'total' => 340000],
-    ['name' => 'Citra', 'course' => 'Laravel Dasar',  'total' => 500000],
+$registrations = [
+    ['name' => 'Alya',  'course' => 'Web Dasar',     'total' => 240000],
+    ['name' => 'Bima',  'course' => 'PHP Dasar',     'total' => 340000],
+    ['name' => 'Citra', 'course' => 'Laravel Dasar', 'total' => 500000],
 ];
 
 // Tambahkan data pendaftar baru dari session
-if (isset($_SESSION['history']) && is_array($_SESSION['history'])) {
-
+if (
+    isset($_SESSION['history']) &&
+    is_array($_SESSION['history'])
+) {
     foreach ($_SESSION['history'] as $item) {
-        $history[] = $item;
+        $registrations[] = $item;
     }
-
 }
 ?>
 
@@ -513,7 +514,7 @@ if (isset($_SESSION['history']) && is_array($_SESSION['history'])) {
 
 
             <div class="total-data">
-                <?= count($history) ?> Peserta
+                <?= count($registrations) ?> Peserta
             </div>
 
         </div>
@@ -551,7 +552,7 @@ if (isset($_SESSION['history']) && is_array($_SESSION['history'])) {
 
                 <tbody>
 
-                    <?php foreach ($history as $index => $item): ?>
+                    <?php foreach ($registrations as $index => $item): ?>
 
                         <tr>
 
