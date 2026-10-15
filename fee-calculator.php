@@ -17,12 +17,69 @@ $total = $subtotal - $discount + $adminFee;
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kalkulator Biaya KursusKu</title>
     <style>
-        body{font-family: Arial, sans-serif;background:#f5f7f6;margin:0;padding:32px;color:#16332c}
-        .card{max-width: 720px; margin:auto;background: white; padding:24px; border-radius:16px}
-        table{width:100%; border-collapse:collapse}
-        th, td{border-bottom:1px solid #ddd; padding:10px; text-align:left}
-        .total{background: #eaf7f3; font-weight:bold}
-        a{color:#9f766e}
+        body {
+        font-family: Arial, sans-serif;
+        background: #f3e8ff;
+        margin: 0;
+        padding: 32px;
+        color: #3b0764;
+    }
+
+    .card {
+        max-width: 720px;
+        margin: auto;
+        background: #ffffff;
+        padding: 28px;
+        border-radius: 18px;
+        box-shadow: 0 8px 25px rgba(88, 28, 135, 0.15);
+    }
+
+    h1 {
+        color: #6b21a8;
+        margin-top: 12px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        border-bottom: 1px solid #e9d5ff;
+        padding: 12px 10px;
+        text-align: left;
+    }
+
+    th {
+        background: #faf5ff;
+        color: #581c87;
+    }
+
+    tr:hover {
+        background: #faf5ff;
+    }
+
+    .total {
+        background: #7e22ce;
+        color: #ffffff;
+        font-weight: bold;
+    }
+
+    .total td {
+        border-bottom: none;
+    }
+
+    a {
+        color: #9333ea;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #581c87;
+        text-decoration: underline;
+    }
     </style>
 </head>
 <body>
