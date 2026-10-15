@@ -286,4 +286,3 @@ var_dump($canRead, $canWrite, $canDelete);
 
 </body>
 </html>
-```
